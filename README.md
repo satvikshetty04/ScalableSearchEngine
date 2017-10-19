@@ -8,3 +8,7 @@ A scalable search engine on text documents with constant query latency. It will 
 - Amit Kanwar
 - Ashis Sahoo
 - Satvik Shetty
+
+**Project Architecture**
+
+![Project Architecture](/Architecture.JPG?raw=true "Project Architecture")
