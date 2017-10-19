@@ -1,4 +1,4 @@
-# Scalable Text Search Engine
+# Text Search Engine augmented with a Real-Time classifier.
 
 **Project description:** 
 
