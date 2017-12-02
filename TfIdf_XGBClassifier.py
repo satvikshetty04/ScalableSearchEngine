@@ -8,6 +8,7 @@ import sys
 import os
 from xgboost.sklearn import XGBClassifier
 from sklearn.externals import joblib
+import pickle
 
 # ---------------------- Reading csv file
 base_dir = os.getcwd()
@@ -32,6 +33,8 @@ words = top_words(list(set(df['news_category'])), 200)
 for word in words:
     df[word] = df['news_overall'].str.count(word)
 
+# with open("features.txt", "w") as output:
+#     output.write(str())
 
 # ---------------------- Splitting into train and test
 Y = df['news_category']
@@ -53,14 +56,20 @@ labels=list(set(Y_train))
 f1_score(y_true=Y_test, y_pred=xgbmodel.predict(X_test), average='weighted')
 
 # --------------------- Saving model
-joblib.dump(xgbmodel, 'BOW_XGBClassifier.pkl')
+pickle.dump({"features": words, "model": xgbmodel}, open("XGBClassifier.pkl", "wb"))
+# joblib.dump(xgbmodel, 'BOW_XGBClassifier.pkl')
 
 # --------------------- Classification test
 df2 = pd.DataFrame()
 df2['news_overall'] = ["The Patriots are preparing to face the Dolphins twice in the next three weeks, while the Celtics ready themselves for a test of their winning streak against the Miami Heat on Wednesday night."]
 # Expected outcome - Sport
-for word in words:
+
+pkl_file = pickle.load(open("XGBClassifier.pkl", 'rb'))
+model = pkl_file['model']
+features = pkl_file['features']
+
+for word in features:
     df2[word] = df2['news_overall'].str.count(word)
 df2.drop(['news_overall'], axis=1, inplace=True)
-model = joblib.load('BOW_XGBClassifier.pkl')
-model.predict(df2)
+# model = joblib.load('BOW_XGBClassifier.pkl')
+model.predict(df2)[0]
