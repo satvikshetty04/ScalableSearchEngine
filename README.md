@@ -11,4 +11,4 @@ A scalable search engine on text documents with constant query latency. It will 
 
 **Project Architecture**
 
-![Project Architecture](/Architecture.JPG?raw=true "Project Architecture")
+![Project Architecture](/Architecture.jpg?raw=true "Project Architecture")
