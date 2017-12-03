@@ -41,7 +41,6 @@ $(document).ready(function(){
 					);
 				});
 				
-				console.log(resultElem)
 				$("#searchResults").html("")
 								   .append(
 										   $("<div>").addClass("alert alert-success")

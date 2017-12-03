@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.struts2.ServletActionContext;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -38,9 +39,9 @@ public class SearchAction extends ActionSupport{
 			String jsonResult = writer.toString();
 			
 			JSONObject js = new JSONObject(jsonResult);
-
 			JSONArray resultArray = js.getJSONObject("hits")
 							 .getJSONArray("hits");
+			System.out.println(resultArray.toString(2));
 			
 			ArrayList<String []> articleDetails = new ArrayList<String []>();
 			
