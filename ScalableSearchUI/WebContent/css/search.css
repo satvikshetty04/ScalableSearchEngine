@@ -1,0 +1,49 @@
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: #d3d3d3;
+ 	font-family: 'Oxygen', sans-serif;
+}
+
+.main{
+ 	margin-top: 70px;
+}
+
+h1.title { 
+	font-size: 50px;
+	font-family: 'Passion One', cursive; 
+	font-weight: 400; 
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.maincontent{
+	margin: 0px 100px 0px 100px;
+}
+.article-body{
+	font-size: 12px;
+	font-family: Arial;
+	text-align:justify;
+}
+.article-header{
+	font-weight: bold;
+	font-size: 16px;
+	color: #2e6ca2;
+}
