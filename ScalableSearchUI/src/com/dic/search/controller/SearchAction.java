@@ -41,7 +41,6 @@ public class SearchAction extends ActionSupport{
 
 			JSONArray resultArray = js.getJSONObject("hits")
 							 .getJSONArray("hits");
-			//System.out.println(ja.toString(2));
 			
 			ArrayList<String []> articleDetails = new ArrayList<String []>();
 			
